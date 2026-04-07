@@ -1,8 +1,8 @@
 {
   "id": "FastRestart",
-  "name": "快速重开",
-  "author": "OpenAI Codex",
-  "description": "在暂停菜单中加入快速重开按钮，点击后重新载入当前自动存档。",
+  "name": "\u5feb\u901f\u91cd\u5f00",
+  "author": "Yej1a",
+  "description": "\u5728\u6682\u505c\u83dc\u5355\u4e2d\u52a0\u5165\u5feb\u901f\u91cd\u5f00\u6309\u94ae\uff0c\u70b9\u51fb\u540e\u91cd\u65b0\u8f7d\u5165\u5f53\u524d\u81ea\u52a8\u5b58\u6863\u3002",
   "version": "v0.1.0",
   "has_pck": false,
   "has_dll": true,
