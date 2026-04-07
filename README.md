@@ -25,11 +25,11 @@
 - `QuickRestartService.cs`：自动存档读取与重新加载逻辑
 - `FastRestart.json`：Mod 清单文件
 - `FastRestart/localization/zhs/gameplay_ui.json`：中文按钮文本
+- `build_and_install.bat`：一键编译并安装到游戏目录
 
-## 构建环境
+## 环境要求
 
-需要准备以下环境：
-
+- Windows
 - .NET 9 SDK
 - 《杀戮尖塔 2》本体
 
@@ -55,32 +55,45 @@
 - 当前版本不依赖 `.pck`，所以不配置 `GodotPath` 也能直接编译 DLL
 - 如果你将来想扩展为带资源导出的版本，再补 `GodotPath` 即可
 
-## 编译方法
+## 执行方法
 
-在项目根目录执行：
+### 推荐方式：直接双击 bat
+
+项目根目录提供了一个一键执行脚本：
+
+```text
+build_and_install.bat
+```
+
+双击后会自动执行：
+
+1. 定位 `dotnet`
+2. 进入项目根目录
+3. 执行 `dotnet build -c Release`
+4. 通过工程里的构建后步骤，把 `FastRestart.dll` 和 `FastRestart.json` 复制到游戏目录的 `mods/FastRestart/`
+
+执行成功后，游戏目录中应出现：
+
+```text
+<游戏目录>/mods/FastRestart/FastRestart.dll
+<游戏目录>/mods/FastRestart/FastRestart.json
+```
+
+### 命令行方式
+
+如果你想手动执行，也可以在项目根目录运行：
 
 ```powershell
 dotnet build -c Release
 ```
 
-编译成功后，工程会自动把以下文件复制到游戏目录：
-
-```text
-<游戏目录>/mods/FastRestart/
-```
-
-生成的主要文件包括：
-
-- `FastRestart.dll`
-- `FastRestart.json`
-
-## 安装方法
+## 安装说明
 
 如果你是自己编译：
 
-1. 执行 `dotnet build -c Release`
-2. 确认游戏目录下出现 `mods/FastRestart/`
-3. 确认其中包含 `FastRestart.dll` 和 `FastRestart.json`
+1. 双击 `build_and_install.bat`
+2. 等待脚本执行完成
+3. 启动游戏
 
 如果你是发给别人使用：
 
@@ -96,26 +109,6 @@ dotnet build -c Release
 1. 按 `Esc` 打开暂停菜单
 2. 点击“快速重开”
 3. 当前房间会恢复到最近一次自动存档时的状态
-
-## 发布到 GitHub
-
-如果你要把这个项目传到 GitHub，可以在项目根目录执行：
-
-```powershell
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/你的用户名/你的仓库名.git
-git push -u origin main
-```
-
-如果还没有配置 Git 用户信息，先执行：
-
-```powershell
-git config --global user.name "你的GitHub名字"
-git config --global user.email "你的邮箱"
-```
 
 ## 许可证
 
