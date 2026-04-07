@@ -1,0 +1,9 @@
+<Project>
+  <PropertyGroup>
+    <!-- MegaDot / Godot 4.5.1 is required to export a .pck the game will load. -->
+    <GodotPath>C:/megadot/MegaDot_v4.5.1-stable_mono_win64.exe</GodotPath>
+
+    <!-- Uncomment and set manually if automatic discovery misses your install. -->
+    <!-- <Sts2Path>D:/Steam/steamapps/common/Slay the Spire 2</Sts2Path> -->
+  </PropertyGroup>
+</Project>
